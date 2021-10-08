@@ -16,7 +16,7 @@ export const CasamentoProvider = ({ children }) => {
       (productCart) => productCart.id !== product.id
     );
     setCartCasamento(removeProduct);
-    toast.success("Removido do carrinho casamento");
+    toast.error("Removido do carrinho casamento");
   };
   return (
     <CasamentoContext.Provider

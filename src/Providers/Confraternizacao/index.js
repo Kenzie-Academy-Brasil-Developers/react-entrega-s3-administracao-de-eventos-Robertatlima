@@ -16,7 +16,7 @@ export const ConfraternizacaoProvider = ({ children }) => {
       (productCart) => productCart.id !== product.id
     );
     setCartConfraternizacao(removeProduct);
-    toast.success("Removido do carrinho Confraternizacao");
+    toast.error("Removido do carrinho Confraternizacao");
   };
   return (
     <ConfraternizacaoContext.Provider

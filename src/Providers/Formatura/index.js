@@ -16,7 +16,7 @@ export const FormaturaProvider = ({ children }) => {
       (productCart) => productCart.id !== product.id
     );
     setCartFormatura(removeProduct);
-    toast.success("Removido do carrinho Formatura");
+    toast.error("Removido do carrinho Formatura");
   };
   return (
     <FormaturaContext.Provider

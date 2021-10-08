@@ -11,11 +11,12 @@ const Casamento = () => {
         {cartCasamento &&
           cartCasamento.map((product, index) => (
             <li className="card" key={index}>
-              <img alt={product.name} src={product.image_url} />
-              <p>Nome: {product.name}</p>
-              <p>Início fabricação: {product.first_brewed}</p>
-              <p>Descrição: {product.description}</p>
-              <p>Quantidade de litros: {product.volume.value}L</p>
+              <img src={product.image_url} alt={product.name} />
+              <h3>{product.name}</h3>
+              <p>{product.description}</p>
+
+              <p> first brewed - {product.first_brewed}</p>
+              <p> {product.volume.value}L</p>
               <button
                 className="btn_rem"
                 onClick={() => removeCartCasamento(product)}

@@ -1,10 +1,18 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
 export const ConfraternizacaoContext = createContext([]);
 
 export const ConfraternizacaoProvider = ({ children }) => {
-  const [cartConfraternizacao, setCartConfraternizacao] = useState([]);
+  const [cartConfraternizacao, setCartConfraternizacao] = useState(
+    JSON.parse(localStorage.getItem("cartConfraternizacao")) || []
+  );
+  useEffect(() => {
+    localStorage.setItem(
+      "cartConfraternizacao",
+      JSON.stringify(cartConfraternizacao)
+    );
+  }, [cartConfraternizacao]);
 
   const addCartConfraternizacao = (product) => {
     setCartConfraternizacao([...cartConfraternizacao, product]);
@@ -13,7 +21,7 @@ export const ConfraternizacaoProvider = ({ children }) => {
 
   const removeCartConfraternizacao = (product) => {
     const removeProduct = cartConfraternizacao.filter(
-      (productCart) => productCart.id !== product.id
+      (productCart) => productCart.name !== product.name
     );
     setCartConfraternizacao(removeProduct);
     toast.error("Removido do carrinho Confraternizacao");

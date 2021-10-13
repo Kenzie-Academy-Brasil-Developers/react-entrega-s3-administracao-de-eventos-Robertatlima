@@ -9,8 +9,8 @@ const Casamento = () => {
       <h2>Bem vindo(a) ao seu carrinho Casamento</h2>
       <ul>
         {cartCasamento &&
-          cartCasamento.map((product, index) => (
-            <li className="card" key={index}>
+          cartCasamento.map((product) => (
+            <li className="card" key={product.id}>
               <img src={product.image_url} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.description}</p>

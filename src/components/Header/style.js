@@ -41,12 +41,20 @@ export const Header = styled.div`
     display: none;
   }
   @media (max-width: 715px) {
+    .areaLeft {
+    }
+
+    .media {
+      display: block;
+      margin-right: 15px;
+    }
     h2 {
-      font-size: 19px;
+      font-size: 25px;
     }
     .link {
       display: flex;
       flex-direction: column;
+      font-size: 10px;
     }
     #bidrink {
       display: none;
@@ -54,6 +62,7 @@ export const Header = styled.div`
     p {
       margin-right: 4px;
       color: white;
+      /* display: none; */
     }
   }
 `;
